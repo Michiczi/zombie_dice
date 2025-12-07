@@ -2,43 +2,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.WinnerActivity">
 
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/winner_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nekrofilia"
+        android:text="Player 1 wins!"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/buttons_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app.layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winner_textview">
 
         <Button
             android:id="@+id/new_game_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nowa gra" />
-
-        <Button
-            android:id="@+id/rules_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Zasady" />
 
         <Button
             android:id="@+id/exit_button"

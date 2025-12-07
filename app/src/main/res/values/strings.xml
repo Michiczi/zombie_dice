@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">zombie_dice</string>
+    <string name="game_rules">Zasady gry Zombie Dice:\n\n1. Gracze wcielają się w zombie i rzucają kośćmi, aby zdobyć 13 mózgów.\n2. W każdej turze gracz rzuca trzema kośćmi z kubka.\n3. Wyniki rzutu to: MÓZG (punkt), STRZAŁ (rana), UCIECZKA (przeniesienie kości do kolejnego rzutu).\n4. Gracz może kontynuować rzuty, dopóki nie zbierze 3 strzałów.\n5. Po 3 strzałach tura kończy się, a gracz traci zdobyte w niej mózgi.\n6. Gracz może zakończyć turę w dowolnym momencie i zapisać zdobyte mózgi.</string>
 </resources>
