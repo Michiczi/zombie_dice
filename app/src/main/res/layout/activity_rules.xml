@@ -1,17 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/rules_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/game_rules"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-condensed-black"
+        android:gravity="center_horizontal"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:text="Jak pożerać mózgi?"
+        android:textColor="@color/zd_green_400"
+        android:textSize="36sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="(Zasady)"
+        android:textColor="@color/zd_gray_400"
+        android:layout_marginBottom="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_rules_content"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Cel gry -->
+            <TextView
+                style="@style/RulesSectionTitle"
+                android:text="🎯 Cel gry" />
+
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="Bądź pierwszym zombie, które pożre 13 mózgów!" />
+
+            <!-- Kości -->
+            <TextView
+                style="@style/RulesSectionTitle"
+                android:text="🎲 Kości" />
+
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="W grze są trzy rodzaje kości o różnej trudności:" />
+
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="🟢 Zielone - łatwe (więcej mózgów)"
+                android:textColor="@color/zd_green_400"/>
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="🟡 Żółte - średnie"
+                android:textColor="@color/zd_yellow_400"/>
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="🔴 Czerwone - trudne (więcej strzałów)"
+                android:textColor="@color/zd_red_400"/>
+
+            <!-- Symbole -->
+            <TextView
+                style="@style/RulesSectionTitle"
+                android:layout_marginTop="16dp"
+                android:text="📋 Symbole na kościach" />
+
+            <LinearLayout style="@style/SymbolItem">
+                <ImageView style="@style/SymbolIcon" android:src="@drawable/ic_brain" />
+                <LinearLayout style="@style/SymbolDescription">
+                    <TextView style="@style/SymbolTitle" android:textColor="@color/zd_green_400" android:text="Mózg" />
+                    <TextView style="@style/SymbolText" android:text="Punkt! Im więcej, tym lepiej." />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/SymbolItem">
+                <ImageView style="@style/SymbolIcon" android:src="@drawable/ic_shotgun" />
+                <LinearLayout style="@style/SymbolDescription">
+                    <TextView style="@style/SymbolTitle" android:textColor="@color/zd_red_400" android:text="Strzał" />
+                    <TextView style="@style/SymbolText" android:text="Niebezpieczeństwo! Trzy strzały = koniec tury." />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/SymbolItem">
+                <ImageView style="@style/SymbolIcon" android:src="@drawable/ic_run" />
+                <LinearLayout style="@style/SymbolDescription">
+                    <TextView style="@style/SymbolTitle" android:textColor="@color/zd_yellow_400" android:text="Ucieczka" />
+                    <TextView style="@style/SymbolText" android:text="Ofiara uciekła. Nic się nie dzieje." />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Przebieg tury -->
+            <TextView
+                style="@style/RulesSectionTitle"
+                android:layout_marginTop="16dp"
+                android:text="🎮 Przebieg tury" />
+
+            <TextView style="@style/RulesSectionContent" android:text="1. W swojej turze rzucasz trzema losowymi kośćmi."/>
+            <TextView style="@style/RulesSectionContent" android:text="2. Zliczasz wyniki: mózgi (punkty) i strzały."/>
+            <TextView style="@style/RulesSectionContent" android:text="3. Decyzja:" android:textColor="@color/zd_yellow_400"/>
+            <TextView style="@style/RulesSectionContent" android:layout_marginStart="16dp" android:text="• Kontynuuj rzucanie aby zdobyć więcej mózgów"/>
+            <TextView style="@style/RulesSectionContent" android:layout_marginStart="16dp" android:text="• Zakończ turę i zachowaj zdobyte mózgi"/>
+            <TextView style="@style/RulesSectionContent" android:text="4. Uwaga! Jeśli zbierzesz 3 strzały - tracisz wszystkie mózgi z tej tury!" android:textColor="@color/zd_red_400"/>
+
+            <!-- Zwycięstwo -->
+            <TextView
+                style="@style/RulesSectionTitle"
+                android:layout_marginTop="16dp"
+                android:text="🏆 Zwycięstwo" />
+            <TextView
+                style="@style/RulesSectionContent"
+                android:text="Pierwszy gracz, który zdobędzie 13 mózgów wygrywa grę!" />
+
+
+            <!-- Wskazówka -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_tip_box"
+                android:padding="16dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Wskazówka"
+                    android:textSize="20sp"
+                    android:textColor="@color/zd_yellow_400"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/zd_gray_300"
+                    android:text="Zachłanność może być niebezpieczna! Czasami lepiej zatrzymać się z małą liczbą mózgów, niż ryzykować i stracić wszystko."/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Powrót"
+        app:icon="@drawable/ic_chevron_left"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/zd_gray_700"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:cornerRadius="16dp"/>
+
+</LinearLayout>

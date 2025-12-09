@@ -10,13 +10,25 @@ public class Dice {
         RUN
     }
 
-    private final DiceResult[] sides;
+    public enum DiceColor {
+        GREEN,
+        YELLOW,
+        RED
+    }
 
-    public Dice(DiceResult[] sides) {
+    private final DiceResult[] sides;
+    private final DiceColor color;
+
+    public Dice(DiceResult[] sides, DiceColor color) {
         this.sides = sides;
+        this.color = color;
     }
 
     public DiceResult roll() {
         return sides[new Random().nextInt(sides.length)];
+    }
+
+    public DiceColor getColor() {
+        return color;
     }
 }

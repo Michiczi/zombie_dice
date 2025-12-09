@@ -18,22 +18,29 @@ public class WinnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
 
-        TextView winnerTextView = findViewById(R.id.winner_textview);
-        Button newGameButton = findViewById(R.id.new_game_button);
+        TextView winnerAnnouncementTextView = findViewById(R.id.winner_announcement_textview);
+        TextView totalBrainsTextView = findViewById(R.id.total_brains_textview);
+        Button playAgainButton = findViewById(R.id.play_again_button);
         Button exitButton = findViewById(R.id.exit_button);
 
-        String winnerName = getIntent().getStringExtra("winnerName");
-        winnerTextView.setText(String.format(Locale.getDefault(), "%s wins!", winnerName));
+        int winnerId = getIntent().getIntExtra("winnerId", 1);
+        int totalBrains = getIntent().getIntExtra("totalBrains", 0);
 
-        newGameButton.setOnClickListener(v -> {
-            Intent intent = new Intent(WinnerActivity.this, MainActivity.class);
+        winnerAnnouncementTextView.setText(String.format(Locale.getDefault(), "GRACZ %d\nWYGRYWA!", winnerId));
+        totalBrainsTextView.setText(String.valueOf(totalBrains));
+
+        playAgainButton.setOnClickListener(v -> {
+            Intent intent = new Intent(WinnerActivity.this, PreGameActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
         });
 
         exitButton.setOnClickListener(v -> {
-            finishAffinity();
+            Intent intent = new Intent(WinnerActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         });
     }
 }

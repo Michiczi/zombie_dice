@@ -1,13 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Left hemisphere -->
     <path
-        android:fillColor="#4CAF50"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8z" />
+        android:pathData="M25 40 C25 25, 35 15, 45 20 C50 15, 55 18, 55 25 C55 30, 50 35, 50 40 C50 55, 45 65, 35 70 C25 75, 20 70, 20 60 C20 55, 22 48, 25 40Z"
+        android:fillColor="@color/zd_green_400"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2" />
+
+    <!-- Right hemisphere -->
     <path
-        android:fillColor="#4CAF50"
-        android:pathData="M12,6c-3.31,0 -6,2.69 -6,6s2.69,6 6,6 6,-2.69 6,-6 -2.69,-6 -6,-6zM12,16c-2.21,0 -4,-1.79 -4,-4s1.79,-4 4,-4 4,1.79 4,4 -1.79,4 -4,4z" />
+        android:pathData="M50 40 C50 25, 60 15, 70 20 C75 15, 80 18, 80 25 C80 30, 82 35, 80 45 C80 60, 75 70, 65 72 C55 75, 50 70, 50 60 C50 50, 50 45, 50 40Z"
+        android:fillColor="@color/zd_green_400"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2" />
+
+    <!-- Brain wrinkles - left -->
+    <path
+        android:pathData="M30 35 Q35 38, 40 35"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M28 45 Q33 48, 38 45"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M30 55 Q35 58, 40 55"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+
+    <!-- Brain wrinkles - right -->
+    <path
+        android:pathData="M60 35 Q65 38, 70 35"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M62 45 Q67 48, 72 45"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M60 55 Q65 58, 70 55"
+        android:strokeColor="@color/zd_green_600"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+
+    <!-- Cute eyes -->
+    <path
+        android:pathData="M38,50m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#1a1a1a" />
+    <path
+        android:pathData="M62,50m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#1a1a1a" />
+
+    <!-- Smile -->
+    <path
+        android:pathData="M42 58 Q50 62, 58 58"
+        android:strokeColor="#1a1a1a"
+        android:strokeWidth="2"
+        android:strokeLineCap="round" />
 </vector>

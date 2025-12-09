@@ -12,12 +12,12 @@ public class Game {
     private final List<Player> players;
     private int currentPlayerIndex;
     private final List<Dice> diceCup;
-    private static final int WINNING_SCORE = 13;
+    public static final int WINNING_SCORE = 13;
 
     public Game(List<String> playerNames) {
         players = new ArrayList<>();
-        for (String name : playerNames) {
-            players.add(new Player(name));
+        for (int i = 0; i < playerNames.size(); i++) {
+            players.add(new Player(i + 1, playerNames.get(i)));
         }
         currentPlayerIndex = 0;
         diceCup = new ArrayList<>();
@@ -27,13 +27,13 @@ public class Game {
     private void initializeDiceCup() {
         // 6 green, 4 yellow, 3 red
         for (int i = 0; i < 6; i++) {
-            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN}));
+            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.GREEN));
         }
         for (int i = 0; i < 4; i++) {
-            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}));
+            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.YELLOW));
         }
         for (int i = 0; i < 3; i++) {
-            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}));
+            diceCup.add(new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.RED));
         }
         Collections.shuffle(diceCup);
     }

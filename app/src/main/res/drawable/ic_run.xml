@@ -1,10 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Running person silhouette -->
+    <!-- Head -->
     <path
-        android:fillColor="#FFEB3B"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,14l-4,-4h8l-4,4z" />
+        android:pathData="M60,25m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
+        android:fillColor="@color/zd_yellow_600" />
+
+    <!-- Body (leaning forward) -->
+    <path
+        android:pathData="M60,33 L55,50"
+        android:strokeColor="@color/zd_yellow_600"
+        android:strokeWidth="6"
+        android:strokeLineCap="round" />
+
+    <!-- Front arm (extended forward) -->
+    <path
+        android:pathData="M58,38 L72,35"
+        android:strokeColor="@color/zd_yellow_600"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+
+    <!-- Back arm (behind) -->
+    <path
+        android:pathData="M58,40 L45,42"
+        android:strokeColor="@color/zd_yellow_600"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+
+    <!-- Front leg (lifted) -->
+    <path
+        android:pathData="M55,50 L62,65 L65,68"
+        android:strokeColor="@color/zd_yellow_600"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Back leg (pushing off) -->
+    <path
+        android:pathData="M55,50 L48,62 L42,67"
+        android:strokeColor="@color/zd_yellow_600"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Motion lines -->
+    <path
+        android:pathData="M20,28L35,28"
+        android:strokeColor="@color/zd_yellow_400"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.6" />
+    <path
+        android:pathData="M18,38L30,38"
+        android:strokeColor="@color/zd_yellow_400"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.6" />
+    <path
+        android:pathData="M22,48L32,48"
+        android:strokeColor="@color/zd_yellow_400"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeAlpha="0.6" />
+
 </vector>

@@ -1,86 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".ui.GameActivity">
 
     <TextView
-        android:id="@+id/player_info_textview"
-        android:layout_width="wrap_content"
+        android:id="@+id/player_turn_textview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Player 1: 0"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-condensed-black"
+        android:gravity="center_horizontal"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="Tura gracza: Gracz 1"
+        android:textColor="@color/zd_green_400"
+        android:textSize="30sp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/player_score_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Zdobyte mózgi: 0/13"
+        android:textColor="@color/zd_gray_300"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:id="@+id/dice_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/turn_score_textview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_info_textview">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/dice1_imageview"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="8dp"
-            tools:src="@mipmap/ic_launcher" />
+            android:padding="16dp"
+            android:background="@drawable/bg_dice"
+            tools:src="@drawable/ic_brain" />
 
         <ImageView
             android:id="@+id/dice2_imageview"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="8dp"
-            tools:src="@mipmap/ic_launcher" />
+            android:padding="16dp"
+            android:background="@drawable/bg_dice"
+            tools:src="@drawable/ic_shotgun" />
 
         <ImageView
             android:id="@+id/dice3_imageview"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="8dp"
-            tools:src="@mipmap/ic_launcher" />
+            android:padding="16dp"
+            android:background="@drawable/bg_dice"
+            tools:src="@drawable/ic_run" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/turn_score_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Brains: 0, Shotguns: 0"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/buttons_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:orientation="vertical"
+        android:background="@drawable/bg_turn_results"
+        android:padding="24dp"
+        android:layout_marginBottom="16dp">
 
-        <Button
-            android:id="@+id/roll_button"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Rzuć" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mózgi w tej turze:"
+                android:textColor="@color/zd_gray_300"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/turn_brains_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/zd_green_400"
+                android:textSize="24sp"/>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/end_turn_button"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Zakończ turę" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Strzały:"
+                android:textColor="@color/zd_gray_300"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/turn_shots_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/zd_red_400"
+                android:textSize="24sp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/busted_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💀 Zbyt wiele strzałów! Koniec tury!"
+            android:textColor="@color/zd_red_400"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/roll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rzuć kośćmi"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/zd_green_600"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:cornerRadius="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/end_turn_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zakończ turę"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/zd_yellow_600"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:cornerRadius="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wyjdź do menu"
+        android:textColor="@color/zd_gray_300"
+        app:backgroundTint="@color/zd_gray_700"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:cornerRadius="16dp"/>
+
+</LinearLayout>

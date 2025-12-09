@@ -3,52 +3,63 @@ package com.example.zombie_dice.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zombie_dice.R;
+import com.google.android.material.button.MaterialButton;
 
 public class PreGameActivity extends AppCompatActivity {
 
-    private EditText numberOfPlayersEditText;
+    private TextView numPlayersTextView;
+    private MaterialButton incrementButton;
+    private MaterialButton decrementButton;
+    private int numPlayers = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_game);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-        numberOfPlayersEditText = findViewById(R.id.number_of_players_edittext);
+        numPlayersTextView = findViewById(R.id.num_players_textview);
+        incrementButton = findViewById(R.id.increment_button);
+        decrementButton = findViewById(R.id.decrement_button);
         Button startGameButton = findViewById(R.id.start_game_button);
+        Button backButton = findViewById(R.id.back_button);
+
+        updatePlayerCountView();
+
+        incrementButton.setOnClickListener(v -> {
+            if (numPlayers < 8) {
+                numPlayers++;
+                updatePlayerCountView();
+            }
+        });
+
+        decrementButton.setOnClickListener(v -> {
+            if (numPlayers > 2) {
+                numPlayers--;
+                updatePlayerCountView();
+            }
+        });
 
         startGameButton.setOnClickListener(v -> {
-            String numberOfPlayersStr = numberOfPlayersEditText.getText().toString();
-            if (numberOfPlayersStr.isEmpty()) {
-                Toast.makeText(this, "Please enter the number of players", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            int numberOfPlayers = Integer.parseInt(numberOfPlayersStr);
-            if (numberOfPlayers < 2) {
-                Toast.makeText(this, "You need at least 2 players", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
             Intent intent = new Intent(PreGameActivity.this, GameActivity.class);
-            intent.putExtra("numberOfPlayers", numberOfPlayers);
+            intent.putExtra("numberOfPlayers", numPlayers);
             startActivity(intent);
             finish();
         });
+
+        backButton.setOnClickListener(v -> {
+            onBackPressed();
+        });
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
+    private void updatePlayerCountView() {
+        numPlayersTextView.setText(String.valueOf(numPlayers));
+        decrementButton.setEnabled(numPlayers > 2);
+        incrementButton.setEnabled(numPlayers < 8);
     }
 }

@@ -26,12 +26,10 @@
             android:name=".ui.GameActivity"
             android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".ui.RulesActivity"
-            android:parentActivityName=".ui.MainActivity" />
+            android:name=".ui.RulesActivity" />
         <activity android:name=".ui.WinnerActivity" />
         <activity
-            android:name=".ui.PreGameActivity"
-            android:parentActivityName=".ui.MainActivity" />
+            android:name=".ui.PreGameActivity" />
     </application>
 
 </manifest>

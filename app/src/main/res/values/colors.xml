@@ -2,4 +2,25 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Zombie Dice Design Colors -->
+    <color name="zd_red_400">#F56565</color>
+    <color name="zd_yellow_400">#F6E05E</color>
+    <color name="zd_yellow_500">#ECC94B</color>
+    <color name="zd_yellow_600">#D69E2E</color>
+    <color name="zd_green_400">#68D391</color>
+    <color name="zd_green_500">#48BB78</color>
+    <color name="zd_green_600">#38A169</color>
+    <color name="zd_gray_300">#E2E8F0</color>
+    <color name="zd_gray_400">#A0AEC0</color>
+    <color name="zd_gray_500">#718096</color>
+    <color name="zd_gray_600">#4A5568</color>
+    <color name="zd_gray_700">#2D3748</color>
+    <color name="zd_gray_800">#1A202C</color>
+    <color name="zd_gray_900">#171923</color>
+    
+    <!-- Gradient Colors -->
+    <color name="zd_gradient_start">#171923</color>
+    <color name="zd_gradient_center">#1A202C</color>
+    <color name="zd_gradient_end">#171923</color>
 </resources>

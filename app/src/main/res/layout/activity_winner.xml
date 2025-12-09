@@ -1,43 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
     tools:context=".ui.WinnerActivity">
 
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/ic_trophy"
+        android:layout_marginBottom="24dp"
+        app:tint="@color/zd_yellow_400" />
+
     <TextView
-        android:id="@+id/winner_textview"
+        android:id="@+id/winner_announcement_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 1 wins!"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-condensed-black"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="2"
+        android:text="GRACZ 1\nWYGRYWA!"
+        android:textColor="@color/zd_green_400"
+        android:textSize="48sp"
+        android:layout_marginBottom="24dp"/>
 
     <LinearLayout
-        android:id="@+id/buttons_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_player_count"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app.layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winner_textview">
+        android:paddingStart="32dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="24dp"
+        android:layout_marginBottom="32dp">
 
-        <Button
-            android:id="@+id/new_game_button"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nowa gra" />
+            android:text="Pożarł"
+            android:textColor="@color/zd_gray_300"
+            android:textSize="24sp"
+            android:layout_marginBottom="8dp"/>
 
-        <Button
-            android:id="@+id/exit_button"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/total_brains_textview"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wyjście" />
+            android:fontFamily="sans-serif-condensed-black"
+            android:text="13"
+            android:textColor="@color/zd_green_400"
+            android:textSize="60sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mózgów!"
+            android:textColor="@color/zd_gray_300"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/play_again_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Zagraj jeszcze raz"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/zd_green_600"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_play_again" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Wyjdź do menu"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/zd_gray_700"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_home" />
+
+</LinearLayout>

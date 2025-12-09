@@ -1,10 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Bullet hole impact -->
     <path
-        android:fillColor="#F44336"
-        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,4c4.41,0 8,3.59 8,8s-3.59,8 -8,8 -8,-3.59 -8,-8 3.59,-8 8,-8zM11,7v2h2V7h-2zM11,11v6h2v-6h-2z" />
+        android:pathData="M50,50m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0"
+        android:fillColor="#dc2626"
+        android:fillAlpha="0.8" />
+    <path
+        android:pathData="M50,50m-12,0a12,12 0,1 1,24 0a12,12 0,1 1,-24 0"
+        android:fillColor="#7f1d1d" />
+
+    <!-- Cracks -->
+    <path
+        android:pathData="M50,32L50,18"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M50,68L50,82"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M32,50L18,50"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M68,50L82,50"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M38,38L28,28"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M62,38L72,28"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M38,62L28,72"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M62,62L72,72"
+        android:strokeColor="#dc2626"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round" />
+
+    <!-- Center hole -->
+    <path
+        android:pathData="M50,50m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0"
+        android:fillColor="#450a0a" />
+
+    <!-- Impact splatters -->
+    <path
+        android:pathData="M35,35m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
+        android:fillColor="#dc2626"
+        android:fillAlpha="0.6"/>
+    <path
+        android:pathData="M65,35m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0"
+        android:fillColor="#dc2626"
+        android:fillAlpha="0.6"/>
+    <path
+        android:pathData="M35,65m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0"
+        android:fillColor="#dc2626"
+        android:fillAlpha="0.6"/>
+    <path
+        android:pathData="M65,65m-3.5,0a3.5,3.5 0,1 1,7 0a3.5,3.5 0,1 1,-7 0"
+        android:fillColor="#dc2626"
+        android:fillAlpha="0.6"/>
+
 </vector>

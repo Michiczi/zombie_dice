@@ -3,6 +3,7 @@
     <style name="Base.Theme.Zombie_dice" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@drawable/background_gradient</item>
     </style>
 
     <style name="Theme.Zombie_dice" parent="Base.Theme.Zombie_dice" />

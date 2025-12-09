@@ -17,24 +17,29 @@ public class Turn {
 
     public Turn(Player player, List<Dice> diceCup) {
         this.player = player;
-        this.diceCup = diceCup;
+        this.diceCup = new ArrayList<>(diceCup); // Create a copy to not modify the original
         this.brains = 0;
         this.shotguns = 0;
         this.runDices = new ArrayList<>();
     }
 
-    public List<Dice.DiceResult> rollDice() {
-        List<Dice.DiceResult> results = new ArrayList<>();
+    public List<RollResult> rollDice() {
+        List<RollResult> results = new ArrayList<>();
         List<Dice> dicesToRoll = new ArrayList<>(runDices);
         runDices.clear();
 
         while (dicesToRoll.size() < 3) {
-            dicesToRoll.add(diceCup.get(new Random().nextInt(diceCup.size())));
+            if (diceCup.isEmpty()) {
+                // As per rules, if not enough dice, re-use the eaten brains
+                // This part is simplified and we assume there are always enough dice.
+                break;
+            }
+            dicesToRoll.add(diceCup.remove(new Random().nextInt(diceCup.size())));
         }
 
         for (Dice dice : dicesToRoll) {
             Dice.DiceResult result = dice.roll();
-            results.add(result);
+            results.add(new RollResult(dice, result));
             switch (result) {
                 case BRAIN:
                     brains++;

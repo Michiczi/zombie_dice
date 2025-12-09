@@ -10,7 +10,7 @@ public class DiceTest {
 
     @Test
     public void testGreenDiceDistribution() {
-        Dice greenDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN});
+        Dice greenDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.GREEN);
         Map<Dice.DiceResult, Integer> counts = new HashMap<>();
         for (int i = 0; i < 1000; i++) {
             Dice.DiceResult result = greenDice.roll();
@@ -25,7 +25,7 @@ public class DiceTest {
 
     @Test
     public void testYellowDiceDistribution() {
-        Dice yellowDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN});
+        Dice yellowDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.YELLOW);
         Map<Dice.DiceResult, Integer> counts = new HashMap<>();
         for (int i = 0; i < 1000; i++) {
             Dice.DiceResult result = yellowDice.roll();
@@ -40,7 +40,7 @@ public class DiceTest {
 
     @Test
     public void testRedDiceDistribution() {
-        Dice redDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN});
+        Dice redDice = new Dice(new Dice.DiceResult[]{Dice.DiceResult.BRAIN, Dice.DiceResult.RUN, Dice.DiceResult.RUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN, Dice.DiceResult.SHOTGUN}, Dice.DiceColor.RED);
         Map<Dice.DiceResult, Integer> counts = new HashMap<>();
         for (int i = 0; i < 1000; i++) {
             Dice.DiceResult result = redDice.roll();
